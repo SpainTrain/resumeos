@@ -14,6 +14,10 @@ a:hover{
 	text-decoration: underline;
 }
 
+td{
+	vertical-align: top;
+}
+
 #header{
 	margin-bottom: 18px;
 }
@@ -23,10 +27,11 @@ a:hover{
 	font-weight: bold;
 }
 
-.skill-list{
+.ls-dir{
 	margin-bottom: 18px;
 }
 
-.active-false{
-	display: none;
+.sub-result{
+	margin-top: 9px;
+	margin-left: 18px;
 }

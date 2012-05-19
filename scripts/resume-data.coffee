@@ -1,3 +1,15 @@
+###
+In the future, this will be delivered as json from the server
+###
+
+### CONTACT INFO ###
+contact =
+	first: "Michael"
+	last: "Spainhower"
+	phone: "703-509-2726"
+	email: "mcspainhower@gmail.com"
+
+### RESUME CONTENT ###
 sections = {}
 
 ### Define Sections ###
@@ -12,114 +24,108 @@ sections.references = {title: "References", elements: []}
 ##############
 sections.skills.elements = [
 	name: "Languages"
-	elements: [
-		{key: "javascript", value: "JavaScript"},
-		{key: "csharp", value: "C#"},
-		{key: "java", value: "Java"},
-		{key: "coffeescript", value: "CoffeScript"},
-		{key: "sqlpl", value: "SQL(/PL)"},
-		{key: "shell", value: "Shell"},
-		{key: "c", value: "C"},
-		{key: "python", value: "Python"},
-		{key: "cpp", value: "C++"},
-		{key: "haskell", value: "Haskell"}
-	]
+	elements:
+		javascript : "JavaScript"
+		csharp : "C#"
+		java : "Java"
+		coffeescript : "CoffeScript"
+		sqlpl : "SQL(/PL)"
+		shell : "Shell"
+		c : "C"
+		python : "Python"
+		cpp : "C++"
+		haskell : "Haskell"
 ,
 	name: "Development Libraries"
-	elements: [
-		{key: "jquery", value: "jQuery"},
-		{key: "jsjac", value: "jsjac"},
-		{key: "dotnet", value: ".NET (2.0-4.0)"},
-		{key: "htmlfive", value: "HTML5"},
-		{key: "nodejs", value: "Node.js"},
-		{key: "winthirtytwo", value: "Win32"},
-		{key: "jce", value: "Java Crypto Extensions"},
-		{key: "swing", value: "Swing/AWT"},
-		{key: "pcap", value: "PCAP"},
-		{key: "stl", value: "STL"},
-		{key: "xna", value: "XNA"},
-		{key: "cuda", value: "CUDA"},
-	]
+	elements:
+		jquery : "jQuery"
+		angular: "Angular"
+		jsjac : "jsjac"
+		dotnet : ".NET (2.0-4.0)"
+		htmlfive : "HTML5"
+		nodejs : "Node.js"
+		winthirtytwo : "Win32"
+		jce : "Java Crypto Extensions"
+		swing : "Swing/AWT"
+		pcap : "PCAP"
+		stl : "STL"
+		xna : "XNA"
+		cuda : "CUDA"
 ,
 	name: "Development Support Software"
-	elements: [
-		{key: "git", value: "Git"},
-		{key: "redmine", value: "Redmine"},
-		{key: "svn", value: "SVN"},
-		{key: "msvs", value: "MS Visual Studio"},
-		{key: "jasmine", value: "Jasmine"},
-		{key: "gdb", value: "gdb"},
-		{key: "netbeans", value: "Netbeans"},
-		{key: "eclipse", value: "Eclipse"}
-	]
+	elements:
+		git : "Git"
+		redmine : "Redmine"
+		svn : "SVN"
+		msvs : "MS Visual Studio"
+		jasmine : "Jasmine"
+		gdb : "gdb"
+		netbeans : "Netbeans"
+		eclipse : "Eclipse"
+
 ,
 	name: "Server Software"
-	elements: [
-		{key: "apache", 	value: "Apache (mod_<many>)"},
-		{key: "openfire",	value: "OpenFire"						},
-		{key: "iis", 			value: "IIS"								},
-		{key: "msdc", 		value: "MS DC"							},
-		{key: "squid", 		value: "Squid"							},
-		{key: "jetty", 		value: "Jetty"							}
-	]
+	elements:
+		apache 	: "Apache (mod_<many>)"
+		openfire	: "OpenFire"
+		iis 			: "IIS"
+		msdc 		: "MS DC"
+		squid 		: "Squid"
+		jetty 		: "Jetty"
+
 ,
 	name: "Virtualization Software"
-	elements: [
-		{key: "vmware", value: "VMWare (ESX and player)"},
-		{key: "vbox", 	value: "Virtual Box"						},
-		{key: "imunes",	value: "IMUNES"									}
-	]
+	elements:
+		vmware : "VMWare (ESX and player)"
+		vbox 	: "Virtual Box"
+		imunes	: "IMUNES"
+
 ,
 	name: "Document Software"
-	elements: [
-		{key: "latex", 		value: "LaTeX"					},
-		{key: "gimp", 		value: "GIMP/Photoshop"	},
-		{key: "visio", 		value: "Microsoft Visio"},
-		{key: "graphviz",	value: "GraphViz"				},
-		{key: "gnuplot", 	value: "GNUPlot"				}
-	]
+	elements:
+		latex 		: "LaTeX"
+		gimp 		: "GIMP/Photoshop"
+		visio 		: "Microsoft Visio"
+		graphviz	: "GraphViz"
+		gnuplot 	: "GNUPlot"
 ,
 	name: "Systems Administration Software"
-	elements: [
-		{key: "nixutil",	value: "Standard Unix Utilities"},
-		{key: "nagios", 	value: "Nagios"									},
-		{key: "dtrace", 	value: "DTrace"									}
-	]
+	elements:
+		nixutil	: "Standard Unix Utilities"
+		nagios 	: "Nagios"
+		dtrace 	: "DTrace"
 ,
 	name: "Platforms"
-	elements: [
-		{key: "windows", 	value: "Windows"							},
-		{key: "linux", 		value: "Linux"								},
-		{key: "bivio", 		value: "Bivio 2K/7K"					},
-		{key: "endace", 	value: "Endace Ninjabox"			},
-		{key: "solaris",	value: "Solaris 10 (and TX)"	},
-		{key: "aws", 			value: "AWS EC2"							},
-		{key: "cisco", 		value: "Cisco IOS/CatOS"			}
-	]
+	elements:
+		windows 	: "Windows"
+		linux 		: "Linux"
+		bivio 		: "Bivio 2K/7K"
+		endace 	: "Endace Ninjabox"
+		solaris	: "Solaris 10 (and TX)"
+		aws 			: "AWS EC2"
+		cisco 		: "Cisco IOS/CatOS"
 ,
 	name: "Technologies"
-	elements: [
-		{key: "webservices", 		value: "Web Services"		},
-		{key: "ajax", 					value: "AJAX"						},
-		{key: "xmpp", 					value: "XMPP"						},
-		{key: "virtualization",	value: "Virtualization"	},
-		{key: "tcpip", 					value: "TCP/IP"					},
-		{key: "pki", 						value: "PKI"						},
-		{key: "mpls", 					value: "MPLS"						},
-		{key: "rsvpte", 				value: "RSVP(-TE)"			}
-	]
+	elements:
+		webservices 		: "Web Services"
+		ajax 					: "AJAX"
+		xmpp 					: "XMPP"
+		virtualization	: "Virtualization"
+		tcpip 					: "TCP/IP"
+		pki 						: "PKI"
+		mpls 					: "MPLS"
+		rsvpte 				: "RSVP(-TE)"
 ,
 	name: "Security Software"
-	elements: [
-		{key: "wireshark", 	value: "(Wire/T)shark/tcpdump"	},
-		{key: "netwitness",	value: "Netwitness"							},
-		{key: "cain", 			value: "Cain & Abel"						},
-		{key: "ettercap", 	value: "Ettercap"								},
-		{key: "nmap", 			value: "Nmap"										},
-		{key: "metasploit", value: "Metasploit"							},
-		{key: "ftk", 				value: "FTK"										},
-		{key: "encase", 		value: "EnCase"									}
-	]
+	elements:
+		wireshark 	: "(Wire/T)shark/tcpdump"
+		netwitness	: "Netwitness"
+		cain 			: "Cain & Abel"
+		ettercap 	: "Ettercap"
+		nmap 			: "Nmap"
+		metasploit : "Metasploit"
+		ftk 				: "FTK"
+		encase 		: "EnCase"
 ]
 
 ##################
@@ -132,14 +138,15 @@ sections.experience.elements.push {
 	start_date: new Date(2010, 2, 1)
 	end_date: "Current"
 	description: "Tasks in the Defense & Homeland Security department have included work with the Assistant Secretary of Defense for Research and Engineering (ASDRE), Cross Boundary Information Sharing Laboratory (XBIS), Army Research Laboratory (ARL), and Air Force JSTARS.  Deliverables have primarily consisted of software and technical documents. Specific projects are detailed in the Projects section below.  Responsibilities also include interviewing candidates on the phone and in person regularly."
+	skill_tags: ["javascript"]
 }
 
 sections.experience.elements.push {
 	key: "disa"
 	title: "Computer Scientist"
 	organization: "Defense Information Systems Agency"
-	start_date: new Date(2010, 1, 31)
-	end_date: new Date(2007,5,30)
+	start_date: new Date(2007,5,30)
+	end_date: new Date(2010, 1, 31)
 	description: "This position involved a variety of duties including engineering, logistics, project planning, and coordination in support of the program office for enterprise security sensors. The primary project, ECOS, entailed deployment of customized network monitoring technology at the most critical points on the DISN Core. One notable piece of this project was writing a Java application that presented a Wireshark-like UI and allowed analysts to retrieve full packet captures from network sensors."
 }
 
@@ -211,6 +218,7 @@ sections.projects.elements.push {
 	name: "XMPP Web Client"
 	org_key: "mitre"
 	description: "Worked with one other developer and one tester to create a custom XMPP chat client in JavaScript.  The client required a 100% pure JavaScript solution that could run XMPP over HTTP (using BOSH) and could gracefully handle requests denied by a specialized proxy.  It also had to work flawlessly on Mozilla 1.7.13 and Sea Monkey 1.1.12 running on OpenVMS.  The interface had several user-configurable requirements and utilized jQuery and jQuery UI heavily."
+	skill_tags: ["javascript"]
 }
 
 sections.projects.elements.push {

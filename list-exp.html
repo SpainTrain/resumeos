@@ -1,0 +1,18 @@
+<span class="shell">[employer@ec2-resume-server]$</span> <span class="command">ls ~/resume/experience/</span>
+<br/><br/>
+<div>
+	<div class="ls-dir"><a href="#/resume">..</a></div>
+	<div ng-repeat="job in experience | orderBy:'job.start_date'" class="ls-dir">
+		<div>
+			<a ng-click="isShown=!isShown" ng-init="isShown=false">{{job.title}}</a>:
+		</div>
+		<div ng-show="isShown" class="sub-result">
+			<table><tbody>
+			<tr><td>Organization:</td><td>{{job.organization}}</td></tr>
+			<tr><td>Dates:</td><td>{{job.start_date | date}} - {{job.end_date | date}}</td></tr>
+			<tr><td>Description:</td><td>{{job.description}}</td></tr>
+			<tr><td><a ng-href="#/resume/experience/{{job.key}}">View Related</a>
+			</tbody></table>
+		</div>
+	</div>
+</div>
