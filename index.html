@@ -1,0 +1,37 @@
+<html ng-app>
+<head>
+	<link rel="stylesheet" type="text/css" href="resume.css" />
+	<!--<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/ui-darkness/jquery-ui.css" />-->
+</head>
+<body>
+
+	<div id="header">
+		<span id="os-splash">Welcome to ResuMe OS!</span><br/>
+		Admin: <span id="name">Michael Spainhower</span><br/>
+		Admin Ph: <span id="phone">703-509-2726</span><br/>
+		Admin Email: <a id="email" href="mailto:mcspainhower@gmail.com">mcspainhower@gmail.com</a>
+	</div>
+
+	<div id="resume">
+			<span class="shell">[employer@ec2-resume-server]$</span> <span class="command">ls * ~/skills/</span>
+			<br/><br/>
+			<div class="ls-results" ng-controller="SkillsCtrl">
+				<div ng-repeat="skill in skills" class="skill-list">
+					<div class="ls-dir"><a ng-click="toggle_skill(skill)">{{skill.name}}</a>:</div>
+					<div class="active-{{skill.active}}">
+						<span ng-repeat="element in skill.elements"><a class="{{element.key}}">{{element.value}}</a> </span>
+					</div>
+				</div>
+			</div>
+	</div>
+
+	<div id ="footer">
+	</div>
+<!--
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"/></script>-->
+	<script type="text/javascript" src="http://code.angularjs.org/angular-1.0.0rc8.min.js"></script>
+	<script type="text/javascript" src="scripts/resume.js"></script>
+
+</body>
+</html>
