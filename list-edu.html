@@ -2,16 +2,18 @@
 <br/><br/>
 <div>
 	<div class="ls-dir"><a href="#/resume">..</a></div>
-	<div ng-repeat="job in experience | orderBy:'job.start_date'" class="ls-dir">
+	<div ng-repeat="school in education | orderBy:'school.end_date'" class="ls-dir">
 		<div>
-			<a ng-click="isShown=!isShown" ng-init="isShown=false">{{job.title}}</a>:
+			<a ng-click="isShown=!isShown" ng-init="isShown=false">{{school.degree}}</a>:
 		</div>
 		<div ng-show="isShown" class="sub-result">
 			<table><tbody>
-			<tr><td>Organization:</td><td>{{job.organization}}</td></tr>
-			<tr><td>Dates:</td><td>{{job.start_date | date}} - {{job.end_date | date}}</td></tr>
-			<tr><td>Description:</td><td>{{job.description}}</td></tr>
-			<tr><td><a ng-href="#/resume/experience/{{job.key}}">View Related</a>
+			<tr><td>Institution:</td><td>{{school.organization}}</td></tr>
+			<tr><td>Location:</td><td>{{school.location}}</td></tr>
+			<tr><td>Graduation:</td><td>{{school.end_date | date}}</td></tr>
+			<tr><td>GPA:</td><td>{{school.gpa | number:3}}</td></tr>
+			<tr><td>Other:</td><td>{{school.description}}</td></tr>
+			<tr><td><a ng-href="#/resume/education/{{school.key}}">View Related</a>
 			</tbody></table>
 		</div>
 	</div>

@@ -207,7 +207,7 @@ sections.education.elements.push {
 	end_date: new Date(2002, 5)
 	gpa: 4
 	degree: "Cisco Certified Network Associate and Internet Security"
-	description: "Two academic years total"
+	description: "Two academic years total during high school"
 }
 
 ################
