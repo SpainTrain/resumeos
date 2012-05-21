@@ -28,6 +28,8 @@ resumeos_mod.config ($routeProvider) ->
 
 @ProjectsCtrl = ($scope) ->
 	$scope.projects = sections.projects.elements
+	$scope.orgs = {}
+	$scope.orgs[org.key] = org  for org in sections.experience.elements.concat sections.education.elements
 	return this
 
 @ExpCtrl = ($scope) ->
@@ -37,3 +39,8 @@ resumeos_mod.config ($routeProvider) ->
 @EduCtrl = ($scope) ->
 	$scope.education = sections.education.elements
 	return this
+
+@RelationCtrl = ($scope, $location, $routeParams) ->
+	$scope.key = $routeParams.key
+	$scope.sections = sections
+	$scope.location = $location

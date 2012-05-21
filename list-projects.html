@@ -1,10 +1,17 @@
-<span class="shell">[employer@ec2-resume-server]$</span> <span class="command"><!--INSERT COMMAND HERE --></span>
+<span class="shell">[employer@ec2-resume-server]$</span> <span class="command">ls ~/resume/projects/</span>
 <br/><br/>
-<div class="ls-results">
-	<div ng-repeat="skill in skills" class="list">
-		<div class="ls-dir"><a ng-click="toggle_skill(skill)">{{skill.name}}</a>:</div>
-		<div class="active-{{skill.active}}">
-			<span ng-repeat="element in skill.elements"><a class="{{element.key}}">{{element.value}}</a> </span>
+<div>
+	<div class="ls-dir"><a href="#/resume">..</a></div>
+	<div ng-repeat="project in projects" class="ls-dir">
+		<div>
+			<a ng-click="isShown=!isShown" ng-init="isShown=false">{{project.name}}</a>:
+		</div>
+		<div ng-show="isShown" class="sub-result">
+			<table><tbody>
+			<tr><td>Organization:</td><td>{{orgs[project.org_key].organization}}</td></tr>
+			<tr><td>Description:</td><td>{{project.description}}</td></tr>
+			<tr><td><a ng-href="#/resume/experience/{{project.key}}">View Related</a>
+			</tbody></table>
 		</div>
 	</div>
 </div>
