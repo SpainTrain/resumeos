@@ -18,46 +18,43 @@ resumeos_mod.config ($routeProvider) ->
 		otherwise({redirectTo: '/resume'})
 		return this
 
-@BackBtnCtrl = ($scope, $location) ->
-	loc_arr = $location.path().split("/")
-	loc_arr.pop()
-	$scope.back_target = "##{loc_arr.join('/')}"
-	return this
-
 @ContactCtrl = ($scope) ->
 	$scope.contact = contact
 	return this
 
 @ListAllCtrl = ($scope, $location, $rootScope) ->
 	$rootScope.cmd = "ls ~#{$location.path()}"
+	$rootScope.back_target = "#/resume/"
 	$scope.sections = sections
 	return this
 
-@SkillsCtrl = ($scope, $location, $rootScope) ->
+init_sect_ctrl = ($scope, $location, $rootScope) ->
+	[basepath..., sect_name] = $location.path().split("/")
+	$rootScope.back_target = "##{basepath.join('/')}"
+	$scope[sect_name] = sections[sect_name].elements
 	$rootScope.cmd = "ls ~#{$location.path()}"
-	$scope.skills = sections.skills.elements
+	return this
+
+@SkillsCtrl = ($scope, $location, $rootScope) ->
+	init_sect_ctrl($scope, $location, $rootScope)
 	return this
 
 @RefCtrl = ($scope, $location, $rootScope) ->
-	$rootScope.cmd = "ls ~#{$location.path()}"
-	$scope.references = sections.references.elements
+	init_sect_ctrl($scope, $location, $rootScope)
 	return this
 
 @ProjectsCtrl = ($scope, $location, $rootScope) ->
-	$rootScope.cmd = "ls ~#{$location.path()}"
-	$scope.projects = sections.projects.elements
+	init_sect_ctrl($scope, $location, $rootScope)
 	$scope.orgs = {}
 	$scope.orgs[org.key] = org  for org in sections.experience.elements.concat sections.education.elements
 	return this
 
 @ExpCtrl = ($scope, $location, $rootScope) ->
-	$rootScope.cmd = "ls ~#{$location.path()}"
-	$scope.experience = sections.experience.elements
+	init_sect_ctrl($scope, $location, $rootScope)
 	return this
 
 @EduCtrl = ($scope, $location, $rootScope) ->
-	$rootScope.cmd = "ls ~#{$location.path()}"
-	$scope.education = sections.education.elements
+	init_sect_ctrl($scope, $location, $rootScope)
 	return this
 
 @RelationCtrl = ($scope, $location, $routeParams, $rootScope) ->
