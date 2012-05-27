@@ -18,6 +18,12 @@ resumeos_mod.config ($routeProvider) ->
 		otherwise({redirectTo: '/resume'})
 		return this
 
+@BackBtnCtrl = ($scope, $location) ->
+	loc_arr = $location.path().split("/")
+	loc_arr.pop()
+	$scope.back_target = "##{loc_arr.join('/')}"
+	return this
+
 @ContactCtrl = ($scope) ->
 	$scope.contact = contact
 	return this
@@ -55,7 +61,6 @@ resumeos_mod.config ($routeProvider) ->
 	return this
 
 @RelationCtrl = ($scope, $location, $routeParams, $rootScope) ->
-	###$scope.key = $routeParams.key###
 	$rootScope.cmd = "~/resume/bin/find_related #{$routeParams.key}"
 	$scope.sections = sections
 	$scope.location = $location
@@ -69,5 +74,5 @@ resumeos_mod.config ($routeProvider) ->
 			$scope.education = (degree for degree in sections.education.elements when $scope.key in degree.skill_tags)
 			$scope.experience = (job for job in sections.experience.elements when $scope.key in job.skill_tags)
 			$scope.projects = (proj for proj in sections.projects.elements when $scope.key in proj.skill_tags)
-			$scope.references = (ref for ref in sections.projects.references when $scope.key in ref.skill_tags)
+			$scope.references = (ref for ref in sections.references.elements when $scope.key in ref.skill_tags)
 	return this
