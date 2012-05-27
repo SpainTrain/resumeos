@@ -138,7 +138,7 @@ sections.experience.elements.push {
 	start_date: new Date(2010, 2, 1)
 	end_date: "Current"
 	description: "Tasks in the Defense & Homeland Security department have included work with the Assistant Secretary of Defense for Research and Engineering (ASDRE), Cross Boundary Information Sharing Laboratory (XBIS), Army Research Laboratory (ARL), and Air Force JSTARS.  Deliverables have primarily consisted of software and technical documents. Specific projects are detailed in the Projects section below.  Responsibilities also include interviewing candidates on the phone and in person regularly."
-	skill_tags: ["javascript"]
+	skill_tags: ["javascript", "csharp", "sqlpl", "jquery", "jsjac", "dotnet", "win32", "cuda", "git", "svn", "redmine", "msvs", "jasmine", "gdb", "apache", "openfire", "iis", "msdc", "squid", "jetty", "vmware", "gimp", "visio", "nixutil", "nagios", "windows", "linux", "solaris", "ajax", "webservices", "xmpp", "virtualization", "wireshark"]
 }
 
 sections.experience.elements.push {
@@ -148,7 +148,7 @@ sections.experience.elements.push {
 	start_date: new Date(2007,5,30)
 	end_date: new Date(2010, 1, 31)
 	description: "This position involved a variety of duties including engineering, logistics, project planning, and coordination in support of the program office for enterprise security sensors. The primary project, ECOS, entailed deployment of customized network monitoring technology at the most critical points on the DISN Core. One notable piece of this project was writing a Java application that presented a Wireshark-like UI and allowed analysts to retrieve full packet captures from network sensors."
-	skill_tags: []
+	skill_tags: ["java", "shell", "c", "swing", "awt", "pcap", "netbeans", "eclipse", "visio", "nixutil", "linux", "bivio", "endace", "tcpip", "wirehark", "netwitness"]
 }
 
 sections.experience.elements.push {
@@ -192,7 +192,7 @@ sections.education.elements.push {
 	gpa: 4
 	degree: "Masters of Science in Computer Science"
 	description: "Thesis Topic: Security Issues Related to RSVP-TE Signaling in MPLS Networks"
-	skill_tags: []
+	skill_tags: ["java", "c", "eclipse", "vmware", "vbox", "imunes", "latex", "graphviz", "gnuplot", "nixutil", "windows", "linux", "virtualization", "tcpip", "mpls", "rsvpte", "wireshark", "cain", "ettercap", "nmap", "metasploit"]
 }
 
 sections.education.elements.push {
@@ -203,7 +203,7 @@ sections.education.elements.push {
 	gpa: 3.769
 	degree: "Bachelors of Science in Computer Science"
 	description: "Minor: Mathematics"
-	skill_tags: []
+	skill_tags: ["java", "python", "jce", "eclipse", "latex", "linux", "windows", "pki", "wireshark", "ftk", "encase"]
 }
 
 sections.education.elements.push {
@@ -214,7 +214,7 @@ sections.education.elements.push {
 	gpa: 4
 	degree: "Cisco Certified Network Associate and Internet Security"
 	description: "Two academic years total during high school"
-	skill_tags: []
+	skill_tags: ["linux", "cisco", "tcpip", "wireshark", "namp"]
 }
 
 ################
@@ -225,15 +225,15 @@ sections.projects.elements.push {
 	name: "XMPP Web Client"
 	org_key: "mitre"
 	description: "Worked with one other developer and one tester to create a custom XMPP chat client in JavaScript.  The client required a 100% pure JavaScript solution that could run XMPP over HTTP (using BOSH) and could gracefully handle requests denied by a specialized proxy.  It also had to work flawlessly on Mozilla 1.7.13 and Sea Monkey 1.1.12 running on OpenVMS.  The interface had several user-configurable requirements and utilized jQuery and jQuery UI heavily."
-	skill_tags: ["javascript"]
+	skill_tags: ["javascript", "jquery", "jsjac", "git", "redmine", "jasmine", "apache", "openfire", "vmware", "nixutil", "linux", "ajax", "xmpp", "wireshark", "jetty"]
 }
 
 sections.projects.elements.push {
 	key: "file-transfer"
 	name: "Enterprise File Transfer Service Prototype"
 	org_key: "mitre"
-	description: "Developing a prototype of a client.s desired Enterprise file transfer capability.  This is an integration effort which involves configuring several proxies and a Java (SE, EE, and GWT) front-end to work together in support of client.s specific requirements.  The currently undocumented front-end application is being documented, altered, and debugged in cooperation with its development team."
-	skill_tags: []
+	description: "Developing a prototype of a client's desired Enterprise file transfer capability.  This is an integration effort which involves configuring several proxies and a Java (SE, EE, and GWT) front-end to work together in support of client's specific requirements.  The currently undocumented front-end application is being documented, altered, and debugged in cooperation with its development team."
+	skill_tags: ["java", "nixutil", "linux", "pki"]
 }
 
 sections.projects.elements.push {
@@ -241,7 +241,7 @@ sections.projects.elements.push {
 	name: "ASDR&E Cyber Research"
 	org_key: "mitre"
 	description: "Helped create the Cyber Research Roadmap, a document intended by the Office of the Assistant Secretary of Defense for Research and Engineering to be the 10-year vision/plan for cyber-security research in the DoD."
-	skill_tags: []
+	skill_tags: ["gimp"]
 }
 
 sections.projects.elements.push {
@@ -249,7 +249,7 @@ sections.projects.elements.push {
 	name: "Threat Indicator Web Application"
 	org_key: "mitre"
 	description: "Created an ASP.NET web services based AJAX web application for MITRE.s internal Information Security Operations team.  The application was created from scratch and features public key authentication, a rich JavaScript based client side, ASP.NET web services, and an Oracle database back end.  The web application was utilized to parse, store, and retrieve threat reports and output useful files such as IDS/firewall watch lists for threat analysts and network security operators."
-	skill_tags: []
+	skill_tags: ["javascript", "csharp", "sqlpl", "jquery", "dotnet", "html5", "svn", "msvs", "iis", "windows", "webservices", "ajax", "pki"]
 }
 
 sections.projects.elements.push {
@@ -257,7 +257,7 @@ sections.projects.elements.push {
 	name: "Windows Host Security Data Collector"
 	org_key: "mitre"
 	description: "Created a specialized security-related data collection application for retrieving relevant host-based data.  As the software development lead of a team of three, the host collection application was built in C# on the .NET 2.0 framework, with Win32 native API .interop. used in specialized situations.  The application itself was developed as a framework, with collection agents and output formats implemented as DLL plug-ins.  The application was delivered successfully and allows the client maximum flexibility and ease to research collection methodologies for experimental use."
-	skill_tags: []
+	skill_tags: ["csharp", "cpp", "dotnet", "winthirtytwo", "svn", "msvs", "windows"]
 }
 
 sections.projects.elements.push {
@@ -273,5 +273,5 @@ sections.projects.elements.push {
 	name: "Enterprise Collaborative Operational Sensor"
 	org_key: "disa"
 	description: "The Enterprise Collaborative Operation Sensor (ECOS) is a network security sensor concept in which one physical platform runs multiple applications.  Technical duties included writing analyst software (in Java) to retrieve sensor data, integrating software applications onto the hardware platform, creating shell scripts to secure the end product, deploying the sensors in the field, and documenting architecture designs using MS Visio."
-	skill_tags: []
+	skill_tags: ["java", "shell", "swing", "pcap", "netbeans", "visio", "nixutil", "linux", "bivio", "endace", "tcip", "pki", "wireshark", "netwitness", "cain", "ettercap"]
 }
