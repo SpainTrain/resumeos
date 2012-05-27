@@ -1,0 +1,12 @@
+<span class="shell">[employer@ec2-resume-server]$</span> <span class="command">~/resume/bin/find_related {{key}}</span>
+<br/><br/>
+<div>
+	<div class="ls-dir"><a href="#/resume/{{sect_name}}">..</a></div>
+	
+	<ng-include ng-show="skills.length" src="'list-skills.html'"></ng-include><br/>
+	<ng-include ng-show="experience.length" src="'list-exp.html'"></ng-include><br/>
+	<ng-include ng-show="education.length" src="'list-edu.html'"></ng-include><br/>
+	<ng-include ng-show="projects.length" src="'list-projects.html'"></ng-include><br/>
+	<ng-include ng-show="references.length" src="'list-refs.html'"></ng-include><br/>
+
+</div>

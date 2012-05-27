@@ -148,6 +148,7 @@ sections.experience.elements.push {
 	start_date: new Date(2007,5,30)
 	end_date: new Date(2010, 1, 31)
 	description: "This position involved a variety of duties including engineering, logistics, project planning, and coordination in support of the program office for enterprise security sensors. The primary project, ECOS, entailed deployment of customized network monitoring technology at the most critical points on the DISN Core. One notable piece of this project was writing a Java application that presented a Wireshark-like UI and allowed analysts to retrieve full packet captures from network sensors."
+	skill_tags: []
 }
 
 sections.experience.elements.push {
@@ -157,6 +158,7 @@ sections.experience.elements.push {
 	start_date: new Date(2006, 6)
 	end_date: new Date(2006, 8)
 	description: "The largest project in this position was drafting a completely original guide for penetration testing Voice over IP (VoIP) systems. The document was produced for their red and incident response teams, but has proliferated to other agencies as well."
+	skill_tags: []
 }
 
 sections.experience.elements.push {
@@ -166,6 +168,7 @@ sections.experience.elements.push {
 	start_date: new Date(2001, 12)
 	end_date: new Date(2004, 12)
 	description: "Installed equipment, deployed audio, video, CAT5 and fiber cables, and terminated video and network cables in a new facility in Dec 2001. A summer 2002 internship involved researching performance, functionality, and dependability of wireless WAN solutions and reporting the results to the VP of DTV Engineering."
+	skill_tags: []
 }
 
 sections.experience.elements.push {
@@ -175,6 +178,7 @@ sections.experience.elements.push {
 	start_date: new Date(2002, 3, 25)
 	end_date: new Date(2005, 5)
 	description: "Insert BL desc"
+	skill_tags: []
 }
 
 #################
@@ -188,6 +192,7 @@ sections.education.elements.push {
 	gpa: 4
 	degree: "Masters of Science in Computer Science"
 	description: "Thesis Topic: Security Issues Related to RSVP-TE Signaling in MPLS Networks"
+	skill_tags: []
 }
 
 sections.education.elements.push {
@@ -198,6 +203,7 @@ sections.education.elements.push {
 	gpa: 3.769
 	degree: "Bachelors of Science in Computer Science"
 	description: "Minor: Mathematics"
+	skill_tags: []
 }
 
 sections.education.elements.push {
@@ -208,6 +214,7 @@ sections.education.elements.push {
 	gpa: 4
 	degree: "Cisco Certified Network Associate and Internet Security"
 	description: "Two academic years total during high school"
+	skill_tags: []
 }
 
 ################
@@ -226,6 +233,7 @@ sections.projects.elements.push {
 	name: "Enterprise File Transfer Service Prototype"
 	org_key: "mitre"
 	description: "Developing a prototype of a client.s desired Enterprise file transfer capability.  This is an integration effort which involves configuring several proxies and a Java (SE, EE, and GWT) front-end to work together in support of client.s specific requirements.  The currently undocumented front-end application is being documented, altered, and debugged in cooperation with its development team."
+	skill_tags: []
 }
 
 sections.projects.elements.push {
@@ -233,6 +241,7 @@ sections.projects.elements.push {
 	name: "ASDR&E Cyber Research"
 	org_key: "mitre"
 	description: "Helped create the Cyber Research Roadmap, a document intended by the Office of the Assistant Secretary of Defense for Research and Engineering to be the 10-year vision/plan for cyber-security research in the DoD."
+	skill_tags: []
 }
 
 sections.projects.elements.push {
@@ -240,6 +249,7 @@ sections.projects.elements.push {
 	name: "Threat Indicator Web Application"
 	org_key: "mitre"
 	description: "Created an ASP.NET web services based AJAX web application for MITRE.s internal Information Security Operations team.  The application was created from scratch and features public key authentication, a rich JavaScript based client side, ASP.NET web services, and an Oracle database back end.  The web application was utilized to parse, store, and retrieve threat reports and output useful files such as IDS/firewall watch lists for threat analysts and network security operators."
+	skill_tags: []
 }
 
 sections.projects.elements.push {
@@ -247,6 +257,7 @@ sections.projects.elements.push {
 	name: "Windows Host Security Data Collector"
 	org_key: "mitre"
 	description: "Created a specialized security-related data collection application for retrieving relevant host-based data.  As the software development lead of a team of three, the host collection application was built in C# on the .NET 2.0 framework, with Win32 native API .interop. used in specialized situations.  The application itself was developed as a framework, with collection agents and output formats implemented as DLL plug-ins.  The application was delivered successfully and allows the client maximum flexibility and ease to research collection methodologies for experimental use."
+	skill_tags: []
 }
 
 sections.projects.elements.push {
@@ -254,6 +265,7 @@ sections.projects.elements.push {
 	name: "IA Fellowship Council"
 	org_key: "disa"
 	description: "Volunteered as the social chair for the IA Fellowship Council (IAFC).  This involved organizing all social events including happy hours, brown bag presentations, and .field trips. - full day events at interesting locations.  As a former scholarship recipient, interviewed a large number of candidates (approximately 10 per year) to be recruited from the NFS Scholarship For Service (SFS)."
+	skill_tags: []
 }
 
 sections.projects.elements.push {
@@ -261,4 +273,5 @@ sections.projects.elements.push {
 	name: "Enterprise Collaborative Operational Sensor"
 	org_key: "disa"
 	description: "The Enterprise Collaborative Operation Sensor (ECOS) is a network security sensor concept in which one physical platform runs multiple applications.  Technical duties included writing analyst software (in Java) to retrieve sensor data, integrating software applications onto the hardware platform, creating shell scripts to secure the end product, deploying the sensors in the field, and documenting architecture designs using MS Visio."
+	skill_tags: []
 }

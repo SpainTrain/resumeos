@@ -1,7 +1,4 @@
-<span class="shell">[employer@ec2-resume-server]$</span> <span class="command">ls ~/resume/education/</span>
-<br/><br/>
 <div>
-	<div class="ls-dir"><a href="#/resume">..</a></div>
 	<div ng-repeat="school in education | orderBy:'school.end_date'" class="ls-dir">
 		<div>
 			<a ng-click="isShown=!isShown" ng-init="isShown=false">{{school.degree}}</a>:
