@@ -59,9 +59,8 @@ init_sect_ctrl = ($scope, $location, $rootScope) ->
 
 @RelationCtrl = ($scope, $location, $routeParams, $rootScope) ->
 	$rootScope.cmd = "~/resume/bin/find_related #{$routeParams.key}"
-	$scope.sections = sections
-	$scope.location = $location
-	[basepath..., $scope.sect_name, $scope.key] = $location.path().split("/")
+	[basepath..., route_key] = $location.path().split("/")
+	$rootScope.back_target = "##{basepath.join('/')}"
 	
 	$scope.orgs = {}
 	$scope.orgs[org.key] = org  for org in sections.experience.elements.concat sections.education.elements
