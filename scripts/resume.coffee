@@ -23,6 +23,7 @@ resumeos_mod.config ($routeProvider) ->
 	return this
 
 @ListAllCtrl = ($scope, $location, $rootScope) ->
+	$rootScope.cmd = "ls ~#{$location.path()}"
 	$scope.sections = sections
 	return this
 
@@ -31,30 +32,31 @@ resumeos_mod.config ($routeProvider) ->
 	$scope.skills = sections.skills.elements
 	return this
 
-@RefCtrl = ($scope) ->
+@RefCtrl = ($scope, $location, $rootScope) ->
 	$rootScope.cmd = "ls ~#{$location.path()}"
 	$scope.references = sections.references.elements
 	return this
 
-@ProjectsCtrl = ($scope) ->
+@ProjectsCtrl = ($scope, $location, $rootScope) ->
 	$rootScope.cmd = "ls ~#{$location.path()}"
 	$scope.projects = sections.projects.elements
 	$scope.orgs = {}
 	$scope.orgs[org.key] = org  for org in sections.experience.elements.concat sections.education.elements
 	return this
 
-@ExpCtrl = ($scope) ->
+@ExpCtrl = ($scope, $location, $rootScope) ->
 	$rootScope.cmd = "ls ~#{$location.path()}"
 	$scope.experience = sections.experience.elements
 	return this
 
-@EduCtrl = ($scope) ->
+@EduCtrl = ($scope, $location, $rootScope) ->
 	$rootScope.cmd = "ls ~#{$location.path()}"
 	$scope.education = sections.education.elements
 	return this
 
-@RelationCtrl = ($scope, $location, $routeParams) ->
+@RelationCtrl = ($scope, $location, $routeParams, $rootScope) ->
 	###$scope.key = $routeParams.key###
+	$rootScope.cmd = "~/resume/bin/find_related #{$routeParams.key}"
 	$scope.sections = sections
 	$scope.location = $location
 	[basepath..., $scope.sect_name, $scope.key] = $location.path().split("/")
