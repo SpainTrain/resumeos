@@ -59,16 +59,16 @@ init_sect_ctrl = ($scope, $location, $rootScope) ->
 
 @RelationCtrl = ($scope, $location, $routeParams, $rootScope) ->
 	$rootScope.cmd = "~/resume/bin/find_related #{$routeParams.key}"
-	[basepath..., route_key] = $location.path().split("/")
-	$rootScope.back_target = "##{basepath.join('/')}"
+	[basepath..., sect_name, route_key] = $location.path().split("/")
+	$rootScope.back_target = "##{basepath.join('/')}/#{sect_name}"
 	
 	$scope.orgs = {}
 	$scope.orgs[org.key] = org  for org in sections.experience.elements.concat sections.education.elements
 
-	switch $scope.sect_name
+	switch sect_name
 		when "skills"
-			$scope.education = (degree for degree in sections.education.elements when $scope.key in degree.skill_tags)
-			$scope.experience = (job for job in sections.experience.elements when $scope.key in job.skill_tags)
-			$scope.projects = (proj for proj in sections.projects.elements when $scope.key in proj.skill_tags)
-			$scope.references = (ref for ref in sections.references.elements when $scope.key in ref.skill_tags)
+			$scope.education = (degree for degree in sections.education.elements when route_key in degree.skill_tags)
+			$scope.experience = (job for job in sections.experience.elements when route_key in job.skill_tags)
+			$scope.projects = (proj for proj in sections.projects.elements when route_key in proj.skill_tags)
+			$scope.references = (ref for ref in sections.references.elements when route_key in ref.skill_tags)
 	return this
