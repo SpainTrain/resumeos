@@ -67,8 +67,27 @@ init_sect_ctrl = ($scope, $location, $rootScope) ->
 
 	switch sect_name
 		when "skills"
+			curr_skill_tags = [route_key]
 			$scope.education = (degree for degree in sections.education.elements when route_key in degree.skill_tags)
 			$scope.experience = (job for job in sections.experience.elements when route_key in job.skill_tags)
 			$scope.projects = (proj for proj in sections.projects.elements when route_key in proj.skill_tags)
 			$scope.references = (ref for ref in sections.references.elements when route_key in ref.skill_tags)
+		when "education", "experience"
+			curr_skill_tags = sections[sect_name].elements.skill_tags
+			$scope[sect_name] = (item for item in sections[sect_name].elements when item.key is route_key)
+			$scope.projects = (proj for proj in sections.projects.elements when proj.org_key is route_key)
+		when "projects"
+			curr_skill_tags = sections.experience.elements.skill_tags
+			$scope.projects = (proj for proj in sections.projects.elements when proj.key is route_key)
+			org_key = $scope.projects[0].org_key
+			$scope.education = (degree for degree in sections.education.elements when degree.key is org_key)
+			$scope.experience = (job for job in sections.experience.elements when job.key is org_key)
+		else
+			console?.error("Why is section name #{sect_name}? Not valid!")
+
+	###Get Skills
+			skill_fam = (skill for skill in sections.skills.elements when skill.elements[route_key]?).pop()
+			$scope.skills = [{name: skill_fam.name, elements: {}}]
+			$scope.skills[0].elements[route_key] = skill_fam.elements[route_key]
+	###
 	return this
