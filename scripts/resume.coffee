@@ -73,21 +73,29 @@ init_sect_ctrl = ($scope, $location, $rootScope) ->
 			$scope.projects = (proj for proj in sections.projects.elements when route_key in proj.skill_tags)
 			$scope.references = (ref for ref in sections.references.elements when route_key in ref.skill_tags)
 		when "education", "experience"
-			curr_skill_tags = sections[sect_name].elements.skill_tags
 			$scope[sect_name] = (item for item in sections[sect_name].elements when item.key is route_key)
+			curr_skill_tags = $scope[sect_name][0].skill_tags
 			$scope.projects = (proj for proj in sections.projects.elements when proj.org_key is route_key)
 		when "projects"
-			curr_skill_tags = sections.experience.elements.skill_tags
 			$scope.projects = (proj for proj in sections.projects.elements when proj.key is route_key)
+			curr_skill_tags = $scope.projects[0].skill_tags
 			org_key = $scope.projects[0].org_key
 			$scope.education = (degree for degree in sections.education.elements when degree.key is org_key)
 			$scope.experience = (job for job in sections.experience.elements when job.key is org_key)
 		else
 			console?.error("Why is section name #{sect_name}? Not valid!")
 
-	###Get Skills
-			skill_fam = (skill for skill in sections.skills.elements when skill.elements[route_key]?).pop()
-			$scope.skills = [{name: skill_fam.name, elements: {}}]
-			$scope.skills[0].elements[route_key] = skill_fam.elements[route_key]
-	###
+	$scope.skills = []
+	for skill in curr_skill_tags
+		do (skill) ->
+			fam_added = {}
+			fam_for_new_scope = null
+			for skill_fam in sections.skills.elements
+				do (skill, skill_fam) ->
+					if skill_fam[skill]?
+						if fam_added[skill_fam.name] isnt true
+							fam_for_new_scope = {name: skill_fam.name, elements: {}}
+							fam_added[skill_fam.name] = true
+							$scope.skills.push fam_for_new_scope
+						fam_for_new_scope[skill] = skill_fam[skill]
 	return this
