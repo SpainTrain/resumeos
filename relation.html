@@ -1,7 +1,22 @@
 <div>
-	<ng-include ng-show="skills.length" src="'list-skills.html'"></ng-include><br/>
-	<ng-include ng-show="experience.length" src="'list-exp.html'"></ng-include><br/>
-	<ng-include ng-show="education.length" src="'list-edu.html'"></ng-include><br/>
-	<ng-include ng-show="projects.length" src="'list-projects.html'"></ng-include><br/>
-	<ng-include ng-show="references.length" src="'list-refs.html'"></ng-include><br/>
+	<div ng-show="skills.length">
+		<span>SKILLS</span>
+		<ng-include src="'list-skills.html'"></ng-include>
+	</div>
+	<div ng-show="experience.length" >
+		<span>EXPERIENCE</span>
+		<ng-include src="'list-exp.html'"></ng-include>
+	</div>
+	<div ng-show="education.length" >
+		<span>EDUCATION</span>
+		<ng-include src="'list-edu.html'"></ng-include><br/>
+	</div>
+	<div ng-show="projects.length">
+		<span>PROJECTS</span>
+		<ng-include src="'list-projects.html'"></ng-include><br/>
+	</div>
+	<div ng-show="references.length">
+		<span>REFERENCES</span>
+		<ng-include src="'list-refs.html'"></ng-include><br/>
+	</div>
 </div>
