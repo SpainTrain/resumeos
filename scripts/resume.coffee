@@ -29,6 +29,15 @@ resumeos_mod.config ($routeProvider) ->
 	return this
 
 ###
+# Turn object into an array
+###
+arrayify = (obj) ->
+	toreturn = []
+	for own key, val of obj
+		toreturn.push {key: key, val: val}
+	return toreturn
+
+###
 # Common initialization for section controllers
 ###
 init_sect_ctrl = ($scope, $location, $rootScope) ->
@@ -40,6 +49,7 @@ init_sect_ctrl = ($scope, $location, $rootScope) ->
 
 @SkillsCtrl = ($scope, $location, $rootScope) ->
 	init_sect_ctrl($scope, $location, $rootScope)
+	$scope.arrayify = arrayify
 	return this
 
 @RefCtrl = ($scope, $location, $rootScope) ->
@@ -95,5 +105,7 @@ init_sect_ctrl = ($scope, $location, $rootScope) ->
 		for skill_tag in curr_skill_tags
 			if skill_fam.elements[skill_tag]?
 				new_skill_fam.elements[skill_tag] = skill_fam.elements[skill_tag]
+
+	$scope.arrayify = arrayify
 
 	return this
