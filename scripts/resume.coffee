@@ -88,15 +88,12 @@ init_sect_ctrl = ($scope, $location, $rootScope) ->
 		else
 			console?.error("Why is section name #{sect_name}? Not valid!")
 
-	$scope.skills = []
+	new_skill_fam = {name: "All", elements: {}}
+	$scope.skills = [new_skill_fam]
 
 	for skill_fam in sections.skills.elements
-		new_skill_fam = {name: skill_fam.name, elements: {}}
-		skill_found = false
 		for skill_tag in curr_skill_tags
 			if skill_fam.elements[skill_tag]?
-				skill_found = true
 				new_skill_fam.elements[skill_tag] = skill_fam.elements[skill_tag]
-		if skill_found then $scope.skills.push new_skill_fam
-					
+
 	return this
