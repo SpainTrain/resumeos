@@ -28,6 +28,9 @@ resumeos_mod.config ($routeProvider) ->
 	$scope.sections = sections
 	return this
 
+###
+# Common initialization for section controllers
+###
 init_sect_ctrl = ($scope, $location, $rootScope) ->
 	[basepath..., sect_name] = $location.path().split("/")
 	$rootScope.back_target = "##{basepath.join('/')}"
@@ -35,8 +38,19 @@ init_sect_ctrl = ($scope, $location, $rootScope) ->
 	$rootScope.cmd = "ls ~#{$location.path()}"
 	return this
 
+###
+# Filter for finding correct skills (general enough to be used for other things)
+# @param key key to look for
+# @param list list to look in (null to accept all keys)
+# @return true if key is in list or list is null, false otherwise
+###
+skill_filter = (key, list) ->
+	return if list? then key in list else true
+
 @SkillsCtrl = ($scope, $location, $rootScope) ->
 	init_sect_ctrl($scope, $location, $rootScope)
+	$scope.skill_filter = skill_filter
+	$scope.skill_list = null
 	return this
 
 @RefCtrl = ($scope, $location, $rootScope) ->
@@ -85,17 +99,7 @@ init_sect_ctrl = ($scope, $location, $rootScope) ->
 		else
 			console?.error("Why is section name #{sect_name}? Not valid!")
 
-	$scope.skills = []
-	for skill in curr_skill_tags
-		do (skill) ->
-			fam_added = {}
-			fam_for_new_scope = null
-			for skill_fam in sections.skills.elements
-				do (skill, skill_fam) ->
-					if skill_fam[skill]?
-						if fam_added[skill_fam.name] isnt true
-							fam_for_new_scope = {name: skill_fam.name, elements: {}}
-							fam_added[skill_fam.name] = true
-							$scope.skills.push fam_for_new_scope
-						fam_for_new_scope[skill] = skill_fam[skill]
+	$scope.skills = sections.skills.elements
+	$scope.skill_filter = skill_filter
+	$scope.skill_list = curr_skill_tags
 	return this
