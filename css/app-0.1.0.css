@@ -1,0 +1,30 @@
+body {
+  background-color: Black;
+  color: #22FF22;
+  font-family: "Droid Sans Mono Dotted", "Lucida Console", Monaco, monospace;
+  font-size: 18px;
+}
+a {
+  color: #33FF33;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+td {
+  vertical-align: top;
+}
+#header {
+  margin-bottom: 18px;
+}
+#os-splash {
+  font-size: 22px;
+  font-weight: bold;
+}
+.ls-dir {
+  margin-bottom: 18px;
+}
+.sub-result {
+  margin-top: 9px;
+  margin-left: 18px;
+}
