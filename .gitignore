@@ -1,3 +1,5 @@
 /scripts/*.js
 *.swp
 *.swo
+_dev_public
+node_modules
