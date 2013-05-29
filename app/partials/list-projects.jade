@@ -1,0 +1,17 @@
+div
+  .ls-dir(ng-repeat='project in projects')
+    div
+      a(ng-click='isShown=!isShown', ng-init='isShown=false') {{project.name}}
+      | :
+    .sub-result(ng-show='isShown')
+      table
+        tbody
+          tr
+            td Organization:
+            td {{orgs[project.org_key].organization}}
+          tr
+            td Description:
+            td {{project.description}}
+          tr
+            td
+              a(ng-href='#/resume/projects/{{project.key}}') View Related

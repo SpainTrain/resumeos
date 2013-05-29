@@ -1,0 +1,4 @@
+.ls-results
+	.list(ng-repeat="(section_key, section_element) in sections")
+		.ls-dir
+			a(href="#/resume/{{section_key}}") {{section_element.title}}

@@ -1,0 +1,27 @@
+!!! 5
+html(ng-app="resumeos")
+	head
+		link(rel="stylesheet", type="text/css", href="css/app-@@version.css")
+		title ResumeOS
+		script(type="text/javascript", src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js")
+		script(type="text/javascript", src="js/app-@@version.js")
+	body(ng-cloak, ng-init="cmd='blank'; dirdotdot='#/resume'")
+
+		#header(ng-controller="ContactCtrl")
+			span#os-splash Welcome to ResuMe OS!
+			span Admin:
+			span#name {{contact.first}} {{contact.last}}
+			span Admin Ph:
+			span#phone {{contact.phone}}
+			span Admin Email:
+			a#email(href="mailto:{{contact.email}}") {{contact.email}}
+
+		div
+			span.shell [employer@ec2-resume-server]$
+			span.command {{cmd}}
+			div.ls-dir
+				a(href="{{back_target}}") ..
+
+		#resume(ng-view)
+
+		#footer

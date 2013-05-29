@@ -1,0 +1,20 @@
+div
+  .ls-dir(ng-repeat='job in experience | orderBy:"job.start_date"')
+    div
+      a(ng-click='isShown=!isShown', ng-init='isShown=false') {{job.title}}
+      | :
+    .sub-result(ng-show='isShown')
+      table
+        tbody
+          tr
+            td Organization:
+            td {{job.organization}}
+          tr
+            td Dates:
+            td {{job.start_date | date}} - {{job.end_date | date}}
+          tr
+            td Description:
+            td {{job.description}}
+          tr
+            td
+              a(ng-href='#/resume/experience/{{job.key}}') View Related

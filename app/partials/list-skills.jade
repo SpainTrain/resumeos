@@ -1,0 +1,10 @@
+.ls-results
+  .ls-dir(ng-repeat='skill in skills')
+    div
+      a(ng-click='isShown = !isShown', ng-init='isShown=false') {{skill.name}}
+      | :
+    div(ng-show='isShown', ng-init='elements_arr = arrayify(skill.elements)')
+      span(ng-repeat='skill_element in elements_arr')
+        // Note: Using $index comparison below because $last was not being properly set by Angular
+        a(href='#/resume/skills/{{skill_element.key}}') {{skill_element.val}}
+        span(ng-hide='$index+1==elements_arr.length') ,

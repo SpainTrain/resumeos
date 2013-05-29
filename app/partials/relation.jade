@@ -1,0 +1,21 @@
+div(ng-controller)
+
+	div(ng-show="skills.length")
+		span SKILLS
+		ng-include(src="'list-skills.html'")
+
+	div(ng-show="experience.length")
+		EXPERIENCE
+		ng-include(src="'list-exp.html'")
+
+	div(ng-show="education.length")
+		span EDUCATION
+		ng-include(src="'list-edu.html'")
+
+	div(ng-show="projects.length")
+		span PROJECTS
+		ng-include(src="'list-projects.html'")
+
+	div(ng-show="references.length")
+		span REFERENCES
+		ng-include(src="'list-refs.html'")

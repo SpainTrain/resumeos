@@ -1,0 +1,26 @@
+div
+  .ls-dir(ng-repeat='reference in references')
+    div
+      a(ng-click='isShown=!isShown', ng-init='isShown=false') {{reference.name}}
+      | :
+    .sub-result(ng-show='isShown')
+      table
+        tbody
+          tr
+            td Institution:
+            td {{school.organization}}
+          tr
+            td Location:
+            td {{school.location}}
+          tr
+            td Graduation:
+            td {{school.end_date | date}}
+          tr
+            td GPA:
+            td {{school.gpa | number:3}}
+          tr
+            td Other:
+            td {{school.description}}
+          tr
+            td
+              a(ng-href='#/resume/education/{{school.key}}') View Related
